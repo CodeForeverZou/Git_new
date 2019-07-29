@@ -26,4 +26,12 @@ git reset Hard ead543f
 git checkout -- readme
 git reset HEAD readme
 
+=================================
+ git push -u origin master
+ git pull
 
+ git branch dev
+ git checkout master
+ git branch -d dev
+
+ ·
