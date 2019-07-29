@@ -1,1 +1,10 @@
-git is a version control tools
+git is a version control tool
+
+工作区
+git init
+暂存区
+git add <>
+
+版本库
+git commit -m '...'
+
