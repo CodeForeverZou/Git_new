@@ -8,3 +8,13 @@ git add <>
 版本库
 git commit -m '...'
 
+
+================================
+git log
+
+git diff readme
+
+git status
+
+
+
