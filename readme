@@ -16,5 +16,14 @@ git diff readme
 
 git status
 
+================================
+
+git reset HEAD~~
+git reflog
+
+git reset Hard ead543f
+
+git checkout -- readme
+git reset HEAD readme
 
 
