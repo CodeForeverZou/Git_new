@@ -1,5 +1,9 @@
 git is a version control tool
 
+
+git config --global user.name '..'
+git config --global user.mail 
+
 工作区
 git init
 暂存区
