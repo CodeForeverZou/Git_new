@@ -4,6 +4,11 @@ git is a version control tool
 git config --global user.name '..'
 git config --global user.mail 
 
+ssh-keygen
+cd ~/.ssh
+cat ira_ssh.pub
+it remote add origin git@github.com:CodeForeverZou/Git2.git
+===============================
 工作区
 git init
 暂存区
