@@ -44,6 +44,12 @@ git add README.md
 git commit -m "first commit"
 git remote add origin git@github.com:CodeForeverZou/Git2.git
 git push -u origin master
+-----------------------------------------------
+GitLAb操作（若只有ssh能clone，注意不需要添加端口号）
+git status
+git add -A #提交所有操作
+git commit -m '更改内容'
+git push
 
 =========================
  git pull
