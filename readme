@@ -59,3 +59,43 @@ git push
  git branch -d dev
 
  ·
+ ===========================
+
+ 两个用户、两个github帐号，同一台主机，一个git终端
+ 这就需要两个ssh的密钥，但要区别出主机，并且密钥不能互相覆盖
+
+ 1、生成一个新的SSH KEY
+ ssh-keygen -t rsa -f "~/.ssh/id_rsa2" -C "Mail"
+ 
+ 然后把生成的key（id_ras2.pub的内容）添加到github中，完成github配置
+
+ 2、在~/.ssh目录下，创建一个confg文件，区别主机
+ vi config
+ 输入如下内容：
+ Host git
+ HostName github.com
+ User git
+ IdentityFile ~/.ssh/id_rsa
+
+ Host git2
+ HostName github.com
+ User git
+ IdentityFile ~/.ssh/id_rsa2
+
+ 3、将地址中的git@github.com替换成新建的Host别名
+ 原来的项目的ssh地址为： 
+ $ git@github.com:A/Demo.git 
+ 那么替换后的地址为： 
+ $ github-bcount:A/BestoneGitHub.git 
+ 或者： 
+ $ git@github-bcount:A/Demo.git 
+
+ 然后可以使用$ ssh -T github-bcount命令看看是否修改成功 
+ 用ssh -T git@github.com 看看是不是原来用户的名字，（即实现两个用户分别连接）
+
+ 用$ git remote -v判断一下现在连的是不是Demo这个地址的远程仓库，如果是的，修改host名称：
+
+ $ git remote set-url origin github- bcount:A/Demo.git
+
+ 4、执行push、pull等同步命令即可
+ git push -u origin master
