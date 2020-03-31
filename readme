@@ -99,3 +99,10 @@ git push
 
  4、执行push、pull等同步命令即可
  git push -u origin master
+
+====================================
+查看用户：git config user.name
+查看邮箱：git config user.email
+
+git config --global user.email "你的邮箱"
+git config --global user.name "你的名字"
