@@ -13,7 +13,7 @@ cat id_ssh.pub
 
 git remote add origin git@github.com:CodeForeverZou/Git2.git
 
-===============================
+---
 
 工作区
 
@@ -27,8 +27,7 @@ git add <>
 
 git commit -m '...'
 
-
-================================
+---
 
 git log
 
@@ -36,7 +35,7 @@ git diff readme
 
 git status
 
-================================
+---
 
 git reset HEAD~~
 
@@ -48,15 +47,15 @@ git checkout -- readme
 
 git reset HEAD readme
 
-=================================
+---
 
  git push -u origin master
 
-echo "# Git2" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git remote add origin git@github.com:CodeForeverZou/Git2.git
+echo "# Git2" >> README.md<br>
+git init<br>
+git add README.md<br>
+git commit -m "first commit"<br>
+git remote add origin git@github.com:CodeForeverZou/Git2.git<br>
 git push -u origin master
 
 -----------------------------------------------
@@ -71,7 +70,7 @@ git commit -m '更改内容'
 
 git push
 
-=========================
+---
 
  git pull
 
@@ -81,8 +80,7 @@ git push
  
  git branch -d dev
 
- 
- ===========================
+---
 
  两个用户、两个github帐号，同一台主机，一个git终端
  
@@ -96,28 +94,34 @@ git push
 
  2、在~/.ssh目录下，创建一个confg文件，区别主机
  
- vi config
+ vi config<br>
  输入如下内容：
- Host git
- HostName github.com
- User git
+ 
+ Host git<br>
+ HostName github.com<br>
+ User git<br>
  IdentityFile ~/.ssh/id_rsa
 
- Host git2
- HostName github.com
- User git
+ Host git2<br>
+ HostName github.com<br>
+ User git<br>
  IdentityFile ~/.ssh/id_rsa2
 
  3、将地址中的git@github.com替换成新建的Host别名
  
  原来的项目的ssh地址为： 
+ 
  $ git@github.com:A/Demo.git 
+ 
  那么替换后的地址为： 
+ 
  $ github-bcount:A/BestoneGitHub.git 
+ 
  或者： 
+ 
  $ git@github-bcount:A/Demo.git 
 
- 然后可以使用$ ssh -T github-bcount命令看看是否修改成功 
+ 然后可以使用$ ssh -T github-bcount命令看看是否修改成功 <br>
  用ssh -T git@github.com 看看是不是原来用户的名字，（即实现两个用户分别连接）
 
  用$ git remote -v判断一下现在连的是不是Demo这个地址的远程仓库，如果是的，修改host名称：
@@ -128,7 +132,7 @@ git push
  
  git push -u origin master
 
-====================================
+---
 
 查看用户：git config user.name
 
