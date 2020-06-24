@@ -143,3 +143,26 @@ git push
 git config --global user.email "你的邮箱"
 
 git config --global user.name "你的名字"
+
+---
+不小心init仓库：git取消文件夹 版本控制：**执行命令：find . -name ".git" | xargs rm -Rf** 或者：rm -rf .git
+
+验证公钥可用：**在git bash终端输入ssh -T git@github.com验证与github是否连接成功.**
+
+## ubuntu虚拟机遇到的问题
+
+首先：新建git用户邮箱，添加shh-key，这里你的key随便怎么生成（以下都行，添加后都能用，与name、email无关）
+* ssh-keygen
+* ssh-keygen -t rsa -C "username" (注：username为你git上的用户名)，✖ 这是随意的
+* ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+
+其次：git push时，*ssh: Could not resolve hostname github.com: Temporary failure in Aname resolution fatal: Could not read from remote repository.*
+* 原因是网络问题，发现虚拟机网页也上不了网，可虚拟底下显示网络连接正常！！！尝试更改net、桥接。。等模式，，
+* 后来才发现，Ubuntu是需要自己手动开启网络的，在右上角！！！看到wifi标志
+
+最后：*ssh: Could not resolve hostname github.com: Temporary failure in Aname resolution fatal: Could not read from remote repository.*
+
+*! [rejected] master -> master (fetch first)* 
+* 因为两个仓库提交历史不一致，无法pull拉取远程信息，所以需要在GIT命令中添加一句代码：–allow-unrelated-histories允许不相关历史进行提交
+* 最好是，git pull 把网上的版本拉下来，然后再 push； （这里git pull origin master指定清楚的好）
+* git提供了一种强制上传的方式：git push -f ，它会忽略版本不一致等问题，强制将本地库上传的远程库，但是一定要谨慎使用，因为-f会用本地库覆盖掉远程库
