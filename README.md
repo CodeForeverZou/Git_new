@@ -138,6 +138,10 @@ git push
 
 查看邮箱：git config user.email
 
+若push时出现如下问题：Please tell me who you are
+
+则先查看用户、邮箱，然后再配置相同的用户、邮箱即可！
+
 ![](https://github.com/CodeForeverZou/Git_new/blob/master/img/git%20problem.png)
 
 git config --global user.email "你的邮箱"
