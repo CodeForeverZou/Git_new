@@ -148,10 +148,18 @@ git config --global user.email "你的邮箱"
 git config --global user.name "你的名字"
 
 ---
-不小心init仓库：git取消文件夹 版本控制：**执行命令：find . -name ".git" | xargs rm -Rf** 或者：rm -rf .git
+1）、不小心init仓库：git取消文件夹 版本控制：**执行命令：find . -name ".git" | xargs rm -Rf** 或者：rm -rf .git
 
-验证公钥可用：**在git bash终端输入ssh -T git@github.com验证与github是否连接成功.**
+2）、验证公钥可用：**在git bash终端输入ssh -T git@github.com验证与github是否连接成功.**
 
+3）、**push没权限** git@github.com: Permission denied (publickey). fatal: 无法读取远程仓库。请确认您有正确的访问权限并且仓库存在。
+
+ssh git@github.com 验证私钥是不是添加成功。
+
+git remote add origin git@github.com:CodeForeverZou/Git2.git<br>
+git push origin master
+
+---
 ## ubuntu虚拟机遇到的问题
 
 首先：新建git用户邮箱，添加shh-key，这里你的key随便怎么生成（以下都行，添加后都能用，与name、email无关）
@@ -159,9 +167,13 @@ git config --global user.name "你的名字"
 * ssh-keygen -t rsa -C "username" (注：username为你git上的用户名)，✖ 这是随意的
 * ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 
+### 网络错误
+
 其次：git push时，*ssh: Could not resolve hostname github.com: Temporary failure in Aname resolution fatal: Could not read from remote repository.*
 * 原因是网络问题，发现虚拟机网页也上不了网，可虚拟底下显示网络连接正常！！！尝试更改net、桥接。。等模式，，
 * 后来才发现，Ubuntu是需要自己手动开启网络的，在右上角！！！看到wifi标志
+
+### 版本不一致
 
 最后：*ssh: Could not resolve hostname github.com: Temporary failure in Aname resolution fatal: Could not read from remote repository.*
 
