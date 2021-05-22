@@ -1,0 +1,17 @@
+1、ubuntu使用v2rary，
+安装：https://github.com/v2fly/v2ray-core/releases/tag/v4.31.0 解压后，有v2ctl、v2ray文件
+设置：https://2645net.work/user/node/5 保存json文件，
+运行：./v2ray -config ./jp1.json  查看端口：lsof -i:1080（默认json中已经设置好了端口、协议）
+      netstat -aptn查看所有开放端口
+浏览器插件：
+
+
+
+2、ubuntu安装selenium，
+首先：ubuntu默认是有python2和python3的，我手动安装python3.9后，apt-get remove python3执行不了
+后来，更换python链接的绑定指向才成功，默认为python3.6，同时pip也默认为pip3了
+随后，安装selenium、requests、lxml，下载firefox的webdriver：https://www.selenium.dev/downloads/
+即可执行程序
+
+
+
