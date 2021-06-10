@@ -181,3 +181,11 @@ git push origin master
 * 因为两个仓库提交历史不一致，无法pull拉取远程信息，所以需要在GIT命令中添加一句代码：–allow-unrelated-histories允许不相关历史进行提交
 * 最好是，git pull 把网上的版本拉下来，然后再 push； （这里git pull origin master指定清楚的好）
 * git提供了一种强制上传的方式：git push -f ，它会忽略版本不一致等问题，强制将本地库上传的远程库，但是一定要谨慎使用，因为-f会用本地库覆盖掉远程库
+
+---
+git 查看分支：git branch -a
+
+Ubuntu查看git安装目录： which git.
+
+QT结合git，工具→选项→版本控制→Git→首路径填写git路径，重启在工具向→Git→添加仓库即可
+
