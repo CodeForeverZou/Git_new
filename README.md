@@ -197,7 +197,7 @@ QT结合git，工具→选项→版本控制→Git→首路径填写git路径，
 再git push 推送到自己仓库，会保留git信息
 
 ---
-Git推送大文件
+Git推送大文件：https://www.jianshu.com/p/493b81544f80
 
 git lfs track "*.pack"
 
