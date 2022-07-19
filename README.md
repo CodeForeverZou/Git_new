@@ -183,9 +183,67 @@ git push origin master
 * git提供了一种强制上传的方式：git push -f ，它会忽略版本不一致等问题，强制将本地库上传的远程库，但是一定要谨慎使用，因为-f会用本地库覆盖掉远程库
 
 ---
-git 查看分支：git branch -a
+git 查看分支：git branch -a（或者git branch -vv）
 
 Ubuntu查看git安装目录： which git.
 
 QT结合git，工具→选项→版本控制→Git→首路径填写git路径，重启在工具向→Git→添加仓库即可
 
+---
+保留代码git信息
+先git clone
+再git push 推送到自己仓库，会保留git信息
+
+---
+Git推送大文件
+git lfs track "*.pack"
+git lfs track "*.so"
+echo "*.zip" >> .gitignore
+查看
+ git lfs track
+ git lfs ls-files
+移除git
+rm -rf .git
+
+====================================
+关联已有目录或仓库
+以下命令行需要您在 Git客户端 执行， 不知如何安装Git客户端？
+下载Windows下的Git命令行客户端
+下载Windows下的Git小乌龟客户端
+下载MacOS下的Git客户端
+
+克隆/推送仓库之前还需最后一步：添加SSH密钥，不知如何添加SSH密钥？
+配置Git全局用户名和用户邮箱
+git config --global user.name "your username"
+git config --global user.email "your Email"
+在本地克隆仓库并推送新建的README文件
+git clone ssh://git@xxx.git
+cd Security-Console-scc
+echo "# Security-Console-scc" > README.md
+git add README.md
+git commit -m "add README"
+git push -u origin master
+关联已有代码目录到仓库
+cd <Your directory path>
+mv README.md README-backup.md
+git init
+git remote add origin ssh://git@xxx.git
+git pull origin master
+git add --all
+git commit -m "Initial commit"
+git push -u origin master
+关联已有代码目录到仓库
+cd <Your directory path>
+git init
+git remote add origin ssh://git@xxx.git
+git add --all
+git commit -m "Initial commit"
+git push -u origin master
+关联已有的Git仓库
+cd <Your Git repository path>
+git remote remove origin > /dev/null 2>&1
+git remote add origin ssh://git@xxx.git
+git push -u origin --all -f
+git push -u origin --tags -f
+到这里您应该已经推送内容到本仓库了，去试下其他功能吧！
+![image](https://user-images.githubusercontent.com/35618563/179656509-fdf646a0-046d-4e50-b831-7607f682f78c.png)
