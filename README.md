@@ -1,4 +1,4 @@
-# git is a version control tool
+# git is a version control tool :wink:
 
 
 git config --global user.name '..'
