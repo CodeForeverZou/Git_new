@@ -263,3 +263,33 @@ git push -u origin --tags -f
 到这里您应该已经推送内容到本仓库了，去试下其他功能吧！
 ![image](https://xxx.png)
 ```
+
+### Git: 不同仓库之间的cherry-pick
+```
+step 1:
+	git remote -v  // 查看本地仓库关联的远程仓库
+
+step 2:
+	/* 
+		添加远程仓库到本地
+		仓库地址就是 github 上的 SSH地址，即 git clone 使用的地址
+		old 表示本地为新添加的远程仓库起的别名，方便后续操作
+	*/
+	git remote add old 仓库地址 
+   
+step 3:
+	/*
+		拉取该远程仓库的指定分支
+		old 就是上一步操作所取的名字
+		分支名1 表示本地仓库的分支名，
+		分支名2 表示参考的分支，即：被cherry-pick的分支
+		注：分支名1 和 分支名2 最好保持一致
+	*/
+	git fetch old 分支名1 : 分支名2
+    
+step 4:
+	git cherry-pick 提交id  // 开始cherry-pick， 提交id 即：参考分支的commit id
+    
+step 5:
+	git push // 推送到当前开发分支的远程仓库
+```
